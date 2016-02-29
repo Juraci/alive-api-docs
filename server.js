@@ -1,16 +1,22 @@
-"use strict";
+var makeServer = function() {
+    "use strict";
 
-let express = require('express');
-let app = express();
-const PORT = 8080;
+    let express = require('express');
+    let app = express();
+    const PORT = 8080;
 
-app.use(express.static(`${__dirname}/public/`));
-app.set('view engine', 'ejs');
+    app.use(express.static(`${__dirname}/public/`));
+    app.set('view engine', 'ejs');
 
-app.get('/', function(req, res) {
-    res.render('pages/index', {name: 'Juraci'});
-});
+    app.get('/', function(req, res) {
+        res.render('pages/index', {name: 'Juraci'});
+    });
 
-app.listen(PORT, function() {
-    console.log(`server listening on ${PORT}`);
-});
+    let server = app.listen(PORT, function() {
+        console.log(`server listening on ${PORT}`);
+    });
+
+    return server;
+};
+
+module.exports = makeServer;
