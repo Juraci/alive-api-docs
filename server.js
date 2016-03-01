@@ -7,11 +7,11 @@ var makeServer = function() {
     let app = express();
     const PORT = 8080;
 
-    app.use(express.static(`${__dirname}/public/`));
+    app.use(express.static(`${__dirname}/lib/`));
     app.set('view engine', 'ejs');
 
     app.get('/', function(req, res) {
-        res.render('pages/index', {name: 'Juraci'});
+        res.render('pages/index');
     });
 
     let server = app.listen(PORT, function() {
