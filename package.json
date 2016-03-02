@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"No tests, I'm sorry\" && exit 1",
     "start": "node app.js",
-    "build": "babel public -d lib"
+    "build": "rm -rf lib && babel public -d lib"
   },
   "repository": {
     "type": "git",
