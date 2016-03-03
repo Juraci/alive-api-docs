@@ -24,5 +24,8 @@ class Request {
     }
 }
 
-let req = new Request();
-req.send();
+let element = document.getElementById('check');
+element.addEventListener('click', function() {
+    let req = new Request();
+    req.send();
+});
