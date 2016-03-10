@@ -14,7 +14,7 @@ var makeServer = function() {
         res.render('pages/index');
     });
 
-    let server = app.listen(PORT, function() {
+    let server = app.listen(PORT, "0.0.0.0", function() {
         console.log(`server listening on ${PORT}`);
     });
 
